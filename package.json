@@ -1,0 +1,26 @@
+{
+  "name": "vue-integration-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch --reporter html-reporter.js",
+    "test-chrome": "nightwatch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flexmonster/vue-integration-testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flexmonster/vue-integration-testing/issues"
+  },
+  "homepage": "https://github.com/flexmonster/vue-integration-testing#readme",
+  "dependencies": {
+    "chromedriver": "^105.0.0",
+    "geckodriver": "^3.0.2",
+    "handlebars": "^4.7.7",
+    "nightwatch": "^2.3.4"
+  }
+}
