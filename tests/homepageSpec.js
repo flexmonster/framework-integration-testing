@@ -1,8 +1,7 @@
-describe('homepage vue example', () => {
+xdescribe('check Flexmonster Demo page', () => {
     before((client) => {
         this.homepage = client.page.homepage();
         this.pivotExample = this.homepage.section.mainContainer.section.pivotExample;
-
         this.homepage.navigate();
     });
 
