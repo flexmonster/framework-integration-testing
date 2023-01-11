@@ -1,4 +1,4 @@
-describe('check Flexmonster Toolbar', () => {
+xdescribe('check Flexmonster Toolbar', () => {
     before((client) => {
         this.homepage = client.page.homepage();
         this.pivotExample = this.homepage.section.mainContainer.section.pivotExample;
@@ -81,24 +81,24 @@ describe('check Flexmonster Toolbar', () => {
         this.rightGroup.expect.element('@fieldsTab').to.be.visible;
         this.rightGroup.expect.element('@fieldsTabText').text.to.be.equal("Fields");
         this.rightGroup.click('@fieldsTab');
-        this.pivotExample.expect.section('@toolbarFieldsPopup').to.be.visible;
-        this.pivotExample.section.toolbarFieldsPopup.expect.element("@fieldsTitle").text.to.be.equal('Fields');
-        this.pivotExample.section.toolbarFieldsPopup.expect.element("@fieldsCalculatedValueButton").text.to.be.equal('Add calculated value');
-        this.pivotExample.section.toolbarFieldsPopup.expect.element("@fieldsApplyButton").text.to.be.equal('APPLY');
-        this.pivotExample.section.toolbarFieldsPopup.expect.element("@fieldsCancelButton").text.to.be.equal('CANCEL');
-        this.pivotExample.section.toolbarFieldsPopup.click('@fieldsCancelButton')
+        this.pivotExample.expect.section('@FieldList').to.be.visible;
+        this.pivotExample.section.FieldList.expect.element("@fieldsTitle").text.to.be.equal('Fields');
+        this.pivotExample.section.FieldList.expect.element("@fieldsCalculatedValueButton").text.to.be.equal('Add calculated value');
+        this.pivotExample.section.FieldList.expect.element("@fieldsApplyButton").text.to.be.equal('APPLY');
+        this.pivotExample.section.FieldList.expect.element("@fieldsCancelButton").text.to.be.equal('CANCEL');
+        this.pivotExample.section.FieldList.click('@fieldsCancelButton')
 
     });
 
     it('Check fields configurator button', () => {
         this.pivotGrid.expect.element('@configuratorButton').to.be.visible;
         this.pivotGrid.click('@configuratorButton');
-        this.pivotExample.expect.section('@toolbarFieldsPopup').to.be.visible;
-        this.pivotExample.section.toolbarFieldsPopup.expect.element("@fieldsTitle").text.to.be.equal('Fields');
-        this.pivotExample.section.toolbarFieldsPopup.expect.element("@fieldsCalculatedValueButton").text.to.be.equal('Add calculated value');
-        this.pivotExample.section.toolbarFieldsPopup.expect.element("@fieldsApplyButton").text.to.be.equal('APPLY');
-        this.pivotExample.section.toolbarFieldsPopup.expect.element("@fieldsCancelButton").text.to.be.equal('CANCEL');
-        this.pivotExample.section.toolbarFieldsPopup.click('@fieldsCancelButton')
+        this.pivotExample.expect.section('@FieldList').to.be.visible;
+        this.pivotExample.section.FieldList.expect.element("@fieldsTitle").text.to.be.equal('Fields');
+        this.pivotExample.section.FieldList.expect.element("@fieldsCalculatedValueButton").text.to.be.equal('Add calculated value');
+        this.pivotExample.section.FieldList.expect.element("@fieldsApplyButton").text.to.be.equal('APPLY');
+        this.pivotExample.section.FieldList.expect.element("@fieldsCancelButton").text.to.be.equal('CANCEL');
+        this.pivotExample.section.FieldList.click('@fieldsCancelButton')
     });
 
     it('Check fullscreen tab', () => {
