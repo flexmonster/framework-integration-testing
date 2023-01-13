@@ -1,17 +1,16 @@
 xdescribe('check Flexmonster Toolbar', () => {
     before((client) => {
-        this.homepage = client.page.homepage();
-        this.pivotExample = this.homepage.section.mainContainer.section.pivotExample;
+        this.currentPage = client.page.theToolbar();
+        this.pivotExample = this.currentPage.section.mainContainer.section.pivotExample;
         this.toolbar = this.pivotExample.section.toolbar;
         this.leftGroup = this.toolbar.section.leftGroup;
         this.rightGroup = this.toolbar.section.rightGroup;
         this.pivotGrid = this.pivotExample.section.pivotGrid;
-        this.homepage.navigate();
+        this.currentPage.navigate();
     });
 
     //left button group
-
-    it('Check connect tab', () => {
+    it('Check connect tab', (client) => {
         this.leftGroup.expect.element('@connectTab').to.be.visible;
         this.leftGroup.expect.element('@connectTabText').text.to.be.equal("Connect");
     });
@@ -71,9 +70,12 @@ xdescribe('check Flexmonster Toolbar', () => {
         this.rightGroup.expect.element('@optionsTabText').text.to.be.equal("Options");
         this.rightGroup.click('@optionsTab');
         this.pivotExample.expect.section('@toolbarOptionsPopup').to.be.visible;
-        this.pivotExample.section.toolbarOptionsPopup.expect.element("@optionsTitle").text.to.be.equal('Layout options');
-        this.pivotExample.section.toolbarOptionsPopup.expect.element("@optionsApplyButton").text.to.be.equal('APPLY');
-        this.pivotExample.section.toolbarOptionsPopup.expect.element("@optionsCancelButton").text.to.be.equal('CANCEL');
+        this.pivotExample.section.toolbarOptionsPopup
+            .expect.element("@optionsTitle").text.to.be.equal('Layout options');
+        this.pivotExample.section.toolbarOptionsPopup
+            .expect.element("@optionsApplyButton").text.to.be.equal('APPLY');
+        this.pivotExample.section.toolbarOptionsPopup
+            .expect.element("@optionsCancelButton").text.to.be.equal('CANCEL');
         this.pivotExample.section.toolbarOptionsPopup.click("@optionsApplyButton");
     });
 
@@ -83,7 +85,8 @@ xdescribe('check Flexmonster Toolbar', () => {
         this.rightGroup.click('@fieldsTab');
         this.pivotExample.expect.section('@FieldList').to.be.visible;
         this.pivotExample.section.FieldList.expect.element("@fieldsTitle").text.to.be.equal('Fields');
-        this.pivotExample.section.FieldList.expect.element("@fieldsCalculatedValueButton").text.to.be.equal('Add calculated value');
+        this.pivotExample.section.FieldList
+            .expect.element("@fieldsCalculatedValueButton").text.to.be.equal('Add calculated value');
         this.pivotExample.section.FieldList.expect.element("@fieldsApplyButton").text.to.be.equal('APPLY');
         this.pivotExample.section.FieldList.expect.element("@fieldsCancelButton").text.to.be.equal('CANCEL');
         this.pivotExample.section.FieldList.click('@fieldsCancelButton')
@@ -95,7 +98,8 @@ xdescribe('check Flexmonster Toolbar', () => {
         this.pivotGrid.click('@configuratorButton');
         this.pivotExample.expect.section('@FieldList').to.be.visible;
         this.pivotExample.section.FieldList.expect.element("@fieldsTitle").text.to.be.equal('Fields');
-        this.pivotExample.section.FieldList.expect.element("@fieldsCalculatedValueButton").text.to.be.equal('Add calculated value');
+        this.pivotExample.section.FieldList
+            .expect.element("@fieldsCalculatedValueButton").text.to.be.equal('Add calculated value');
         this.pivotExample.section.FieldList.expect.element("@fieldsApplyButton").text.to.be.equal('APPLY');
         this.pivotExample.section.FieldList.expect.element("@fieldsCancelButton").text.to.be.equal('CANCEL');
         this.pivotExample.section.FieldList.click('@fieldsCancelButton')
@@ -104,7 +108,8 @@ xdescribe('check Flexmonster Toolbar', () => {
     it('Check fullscreen tab', () => {
         this.rightGroup.expect.element('@fullscreenTab').to.be.visible;
         this.rightGroup.expect.element('@fullscreenTabText').text.to.be.equal("Fullscreen");
-        this.rightGroup.click('@fullscreenTab').waitForElementVisible("css selector","#fm-tab-fullscreen");
+        this.rightGroup.click('@fullscreenTab')
+            .waitForElementVisible("css selector","#fm-tab-fullscreen");
         this.rightGroup.expect.element('@fullscreenTab').to.be.visible;
         this.rightGroup.expect.element('@fullscreenTabText').text.to.be.equal("Minimize");
         this.rightGroup.click('@fullscreenTab')

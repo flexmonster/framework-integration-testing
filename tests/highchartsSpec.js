@@ -1,8 +1,8 @@
 xdescribe('testing page With Highcharts', () => {
     before((client) => {
-        this.highchartsPage = client.page.highchartsPage();
-        this.pivotContainer = this.highchartsPage.section.pivotContainer;
-        this.highchartsPage.navigate();
+        this.currentPage = client.page.highchartsPage();
+        this.pivotContainer = this.currentPage.section.pivotContainer;
+        this.currentPage.navigate();
     });
 
     it("Check 'Integration with Highcharts' link to docs", (browser) => {

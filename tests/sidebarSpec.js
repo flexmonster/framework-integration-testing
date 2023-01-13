@@ -1,9 +1,9 @@
 xdescribe('Testing sidebar', () => {
 
     before((client) => {
-        this.homepage = client.page.homepage();
-        this.sidebar = this.homepage.section.mainContainer.section.sidebar;
-        this.homepage.navigate();
+        this.currentPage = client.page.homepage();
+        this.sidebar = this.currentPage.section.mainContainer.section.sidebar;
+        this.currentPage.navigate();
     });
 
     it("Check 'Pivot Table Demo' sidebar link", () => {

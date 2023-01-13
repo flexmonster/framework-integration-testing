@@ -1,8 +1,8 @@
 xdescribe('testing Customizing Toolbar page', () => {
     before((client) => {
-        this.customizingToolbarPage = client.page.customizingToolbarPage();
-        this.pivotContainer = this.customizingToolbarPage.section.pivotContainer;
-        this.customizingToolbarPage.navigate();
+        this.currentPage = client.page.customizingToolbarPage();
+        this.pivotContainer = this.currentPage.section.pivotContainer;
+        this.currentPage.navigate();
     });
 
     it("Check 'Customizig the Toolbar' link to docs", (browser) => {

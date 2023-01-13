@@ -1,24 +1,20 @@
 xdescribe('testing Update data page', () => {
     before((client) => {
-        this.updateDataPage = client.page.updateDataPage();
-        this.pivotContainer = this.updateDataPage.section.pivotContainer;
-        this.updateDataPage.navigate();
+        this.currentPage = client.page.updateDataPage();
+        this.pivotContainer = this.currentPage.section.pivotContainer;
+        this.currentPage.navigate();
     });
 
-    it('Check link to docs', (browser) => {
+    it('Check link to docs', () => {
+        this.pivotContainer.section.description.expect.element('@toUpdateDataLink').to.be.visible;
         this.pivotContainer.section.description
-            .expect
-            .element('@toUpdateDataLink').to.be.visible;
-        this.pivotContainer.section.description
-            .expect
-            .element('@toUpdateDataLink').to.have.attribute('href')
+            .expect.element('@toUpdateDataLink').to.have.attribute('href')
             .which.contains('https://www.flexmonster.com/api/updatedata');
     });
-    it('Check update data button', (browser) => {
-        //browser.useXpath().click("//*[contains(text(),'Update data')]")
+    it('Check update data button', () => {
         this.pivotContainer.expect.element('@updateDataButton').to.be.visible;
-        this.pivotContainer.click('@updateDataButton').pause(4000)
-
+        this.pivotContainer.click('@updateDataButton');
+        //cannot get to the grid values from UI
     });
 
 

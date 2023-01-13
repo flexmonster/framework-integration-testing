@@ -1,8 +1,8 @@
 xdescribe('testing page With amCharts', () => {
     before((client) => {
-        this.amchartsPage = client.page.amchartsPage();
-        this.pivotContainer = this.amchartsPage.section.pivotContainer;
-        this.amchartsPage.navigate();
+        this.currentPage = client.page.amchartsPage();
+        this.pivotContainer = this.currentPage.section.pivotContainer;
+        this.currentPage.navigate();
     });
 
     it("Check 'Integration with amCharts' link to docs", (browser) => {

@@ -1,12 +1,11 @@
 describe('check FieldList', () => {
     before((client) => {
-        this.fieldList = client.page.fieldList();
-        this.pivotExample = this.fieldList.section.pivotExample;
+        this.currentPage = client.page.fieldList();
+        this.pivotExample = this.currentPage.section.pivotExample;
         this.FieldList = this.pivotExample.section.FieldList;
         this.pivotGrid = this.pivotExample.section.pivotGrid;
         this.FieldListContent = this.FieldList.section.FieldListContent;
-        this.fieldList.navigate();
-
+        this.currentPage.navigate();
     });
 
     beforeEach((client) => {

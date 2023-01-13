@@ -1,8 +1,8 @@
 xdescribe('Testing navbar', () => {
     before((client) => {
-        this.homepage = client.page.homepage();
-        this.navbar = this.homepage.section.navbar;
-        this.homepage.navigate();
+        this.currentPage = client.page.homepage();
+        this.navbar = this.currentPage.section.navbar;
+        this.currentPage.navigate();
     });
 
     it("Check navbar logo link", () => {

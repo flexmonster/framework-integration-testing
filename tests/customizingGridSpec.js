@@ -1,8 +1,8 @@
 xdescribe('testing Customizing Grid page', () => {
     before((client) => {
-        this.customizingGridPage = client.page.customizingGridPage();
-        this.pivotContainer = this.customizingGridPage.section.pivotContainer;
-        this.customizingGridPage.navigate();
+        this.currentPage = client.page.customizingGridPage();
+        this.pivotContainer = this.currentPage.section.pivotContainer;
+        this.currentPage.navigate();
     });
 
     it("Check 'Customizig the Grid' link to docs", (browser) => {

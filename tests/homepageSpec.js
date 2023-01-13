@@ -1,8 +1,8 @@
 xdescribe('check Flexmonster Demo page', () => {
     before((client) => {
-        this.homepage = client.page.homepage();
-        this.pivotExample = this.homepage.section.mainContainer.section.pivotExample;
-        this.homepage.navigate();
+        this.currentPage = client.page.homepage();
+        this.pivotExample = this.currentPage.section.mainContainer.section.pivotExample;
+        this.currentPage.navigate();
     });
 
     it('Check title', () => {

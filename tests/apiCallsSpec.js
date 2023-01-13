@@ -1,8 +1,8 @@
 xdescribe('testing using API calls page', () => {
     before((client) => {
-        this.apiCallsPage = client.page.apiCallsPage();
-        this.pivotContainer = this.apiCallsPage.section.pivotContainer;
-        this.apiCallsPage.navigate();
+        this.currentPage = client.page.apiCallsPage();
+        this.pivotContainer = this.currentPage.section.pivotContainer;
+        this.currentPage.navigate();
     });
 
     it('Check Using API calls link to docs', (browser) => {
