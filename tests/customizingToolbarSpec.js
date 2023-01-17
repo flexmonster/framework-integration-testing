@@ -1,8 +1,18 @@
 xdescribe('testing Customizing Toolbar page', () => {
     before((client) => {
         this.currentPage = client.page.customizingToolbarPage();
+        this.sidebar = client.page.commons.sidebar();
+        this.navbar = client.page.commons.navbar();
+        this.fieldList = client.page.commons.fieldList();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
+    });
+
+    it("Checks common sections", () => {
+        this.navbar.runTestSuit();
+        this.sidebar.runTestSuit();
+        //this.fieldList.runTestSuit(); //conflict when adding new calculated value too
+        //different Toolbar
     });
 
     it("Check 'Customizig the Toolbar' link to docs", (browser) => {

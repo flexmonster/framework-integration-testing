@@ -1,8 +1,21 @@
 xdescribe('testing page With amCharts', () => {
     before((client) => {
         this.currentPage = client.page.amchartsPage();
+        this.sidebar = client.page.commons.sidebar();
+        this.navbar = client.page.commons.navbar();
+        this.toolbar = client.page.commons.toolbar();
+        this.fieldList = client.page.commons.fieldList();
+        //this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
+    });
+
+    it("Checks common sections", () => {
+        this.navbar.runTestSuit();
+        this.sidebar.runTestSuit();
+        this.toolbar.runTestSuit();
+        this.fieldList.runTestSuit();
+        //this.pivotGrid.runTestSuit();
     });
 
     it("Check 'Integration with amCharts' link to docs", (browser) => {
@@ -16,7 +29,6 @@ xdescribe('testing page With amCharts', () => {
     });
 
     it('Check the amCharts container', (browser) => {
-
         this.pivotContainer.expect.section('@chart').to.be.visible;
         this.pivotContainer.section.chart.expect.element('@amCharts').to.be.visible;
     });

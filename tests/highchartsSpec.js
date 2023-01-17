@@ -1,8 +1,19 @@
 xdescribe('testing page With Highcharts', () => {
     before((client) => {
         this.currentPage = client.page.highchartsPage();
+        this.sidebar = client.page.commons.sidebar();
+        this.navbar = client.page.commons.navbar();
+        this.toolbar = client.page.commons.toolbar();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
+    });
+
+
+    it("Checks common sections", () => {
+        this.navbar.runTestSuit();
+        this.sidebar.runTestSuit();
+        this.toolbar.runTestSuit();
+        //different grid and fields in FieldList
     });
 
     it("Check 'Integration with Highcharts' link to docs", (browser) => {
