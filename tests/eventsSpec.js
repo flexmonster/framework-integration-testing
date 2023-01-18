@@ -5,6 +5,7 @@ xdescribe('testing events page', () => {
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
+        this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
     });
@@ -15,6 +16,7 @@ xdescribe('testing events page', () => {
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
         this.fieldList.runTestSuit();
+        this.pivotGrid.runTestSuit();
     });
 
     it('Check link to docs', (browser) => {

@@ -4,6 +4,7 @@ xdescribe('testing Customizing Toolbar page', () => {
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.fieldList = client.page.commons.fieldList();
+        this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
     });
@@ -11,8 +12,9 @@ xdescribe('testing Customizing Toolbar page', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-        //this.fieldList.runTestSuit(); //conflict when adding new calculated value too
         //different Toolbar
+        //this.fieldList.runTestSuit(); // waits longer than usual when creating calculated value measure
+        this.pivotGrid.runTestSuit();
     });
 
     it("Check 'Customizig the Toolbar' link to docs", (browser) => {
@@ -30,14 +32,15 @@ xdescribe('testing Customizing Toolbar page', () => {
             .element('@newTab').to.be.visible;
         this.pivotContainer.section.toolbar.section.leftGroup.expect
             .element('@newTab').text.to.be.equal("New Tab");
-
         browser
             .waitForElementVisible('#fm-tab-newtab')
             .click('#fm-tab-newtab a');
         this.pivotContainer.expect.section('@popup').to.be.visible;
         this.pivotContainer.section.popup.expect.element('@popupTitle').text.to.be.equal('Customizing Flexmonster');
-   this.pivotContainer.section.popup.expect.element('@popupLink')
-       .to.have.attribute('href').which.contains('https://www.flexmonster.com/doc/customizing-toolbar');
+        this.pivotContainer.section.popup.expect.element('@popupLink')
+            .to.have.attribute('href').which.contains('https://www.flexmonster.com/doc/customizing-toolbar');
+        this.pivotContainer.section.popup.click('@popupOkButton');
+        //TODO CLOSE THE POP-UP!!!!!!!!!!
     });
 
     after(client => client.end());

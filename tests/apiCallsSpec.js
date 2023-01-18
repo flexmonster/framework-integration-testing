@@ -5,6 +5,7 @@ xdescribe('testing using API calls page', () => {
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
+        this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
     });
@@ -13,7 +14,8 @@ xdescribe('testing using API calls page', () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit(); //configurator button hidden when read-only
-      //  this.fieldList.runTestSuit(); // fails when creating calculated value measure
+       // this.fieldList.runTestSuit(); // waits longer than usual when creating calculated value measure
+        this.pivotGrid.runTestSuit();
     });
 
     it('Check Using API calls link to docs', (browser) => {

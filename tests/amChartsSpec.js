@@ -5,7 +5,7 @@ xdescribe('testing page With amCharts', () => {
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
-        //this.pivotGrid = client.page.commons.pivotGrid();
+        this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
     });
@@ -15,7 +15,7 @@ xdescribe('testing page With amCharts', () => {
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
         this.fieldList.runTestSuit();
-        //this.pivotGrid.runTestSuit();
+        this.pivotGrid.runTestSuit();
     });
 
     it("Check 'Integration with amCharts' link to docs", (browser) => {
