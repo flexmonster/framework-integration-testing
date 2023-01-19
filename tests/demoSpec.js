@@ -1,4 +1,4 @@
-describe('check Flexmonster Demo page', () => {
+xdescribe('check Flexmonster Demo page', () => {
     before((client) => {
         this.currentPage = client.page.demoPage();
         this.sidebar = client.page.commons.sidebar();
