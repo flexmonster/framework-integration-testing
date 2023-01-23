@@ -5,6 +5,7 @@ xdescribe('testing page With amCharts', () => {
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
+        this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
@@ -15,6 +16,7 @@ xdescribe('testing page With amCharts', () => {
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
         this.fieldList.runTestSuit();
+        this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
     });
 

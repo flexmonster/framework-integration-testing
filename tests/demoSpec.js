@@ -1,10 +1,11 @@
-xdescribe('check Flexmonster Demo page', () => {
+describe('check Flexmonster Demo page', () => {
     before((client) => {
         this.currentPage = client.page.demoPage();
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
+        this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotExample = this.currentPage.section.mainContainer.section.pivotExample;
         this.currentPage.navigate();
@@ -15,6 +16,7 @@ xdescribe('check Flexmonster Demo page', () => {
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
         this.fieldList.runTestSuit();
+        this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
     });
 

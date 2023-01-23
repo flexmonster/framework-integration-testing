@@ -5,17 +5,18 @@ xdescribe('testing events page', () => {
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
+        this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
     });
-
 
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
         this.fieldList.runTestSuit();
+        this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
     });
 
@@ -61,7 +62,7 @@ xdescribe('testing events page', () => {
         this.pivotContainer.section.clearOutput
             .expect.element('@clearOutputButton').to.be.visible;
         // this.pivotContainer.section.clearOutput.click('@clearOutputButton');
-        //this.pivotContainer.section.eventsOutput.expect.element('@firstLine').to.not.be.present;
+       // this.pivotContainer.section.eventsOutput.expect.element('@firstLine').to.not.be.present;
     });
 
     //is failing sometimes

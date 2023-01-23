@@ -4,6 +4,7 @@ xdescribe('testing Customizing Toolbar page', () => {
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.fieldList = client.page.commons.fieldList();
+        this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
@@ -13,7 +14,8 @@ xdescribe('testing Customizing Toolbar page', () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         //different Toolbar
-        //this.fieldList.runTestSuit(); // waits longer than usual when creating calculated value measure
+        this.fieldList.runTestSuit();
+        this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
     });
 

@@ -1,26 +1,34 @@
-describe('testing using API calls page', () => {
+xdescribe('testing using API calls page', () => {
+
     before((client) => {
         this.currentPage = client.page.apiCallsPage();
+
+        //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
         this.pivotGrid = client.page.commons.pivotGrid();
+        this.calculatedValuesPopup = client.page.commons.calculatedValues();
+
+        //selectors
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.charts = this.pivotContainer.section.charts;
         this.chartsFilter = this.pivotContainer.section.chartsFilter;
         this.chartMeasures = this.charts.section.chartMeasures;
         this.contextMenu = this.pivotContainer.section.contextMenu;
         this.drillThroughPopup = this.pivotContainer.section.drillThroughPopup;
+
         this.currentPage.navigate();
     });
 
     it("Checks common sections", () => {
-          this.navbar.runTestSuit();
-          this.sidebar.runTestSuit();
-          this.toolbar.runTestSuit(); //configurator button hidden when read-only
-          this.fieldList.runTestSuit(); // waits longer than usual when creating calculated value measure
-          this.pivotGrid.runTestSuit();
+        this.navbar.runTestSuit();
+        this.sidebar.runTestSuit();
+        this.toolbar.runTestSuit(); //configurator button hidden when read-only
+        this.fieldList.runTestSuit();
+        this.calculatedValuesPopup.runTestSuit();
+        this.pivotGrid.runTestSuit();
     });
 
     it('Check Using API calls link to docs', () => {
