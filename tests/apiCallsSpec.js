@@ -41,60 +41,60 @@ xdescribe('testing using API calls page', () => {
             .which.contains('https://www.flexmonster.com/api/methods');
     });
 
-    it('Check Using API calls view toggle(column chart)', (client) => {
-        this.pivotContainer.section.viewToggle.expect.element('@viewCheckbox').to.be.selected;
-        client
-            .waitForElementVisible('#viewToggle').click('#viewToggle label');
+    it('Check Using API calls view toggle(column chart)', () => {
+        this.pivotContainer.section.viewToggle
+            .expect.element('@viewCheckbox').to.be.selected;
+        this.pivotContainer.section.viewToggle.click('@viewCheckboxLabel');
         this.pivotContainer.section.viewToggle.expect
             .element('@viewCheckbox').to.not.be.selected;
         this.pivotContainer.section.viewToggle.expect
             .element('@viewCheckboxLabel').text.to.be.equal("Column chart")
-        client.assert.cssProperty("#viewToggle label", "background-color", "rgba(223, 56, 0, 1)");
+        this.pivotContainer.section.viewToggle
+            .assert.cssProperty("@viewCheckboxLabel", "background-color", "rgba(223, 56, 0, 1)");
         this.pivotContainer.expect.section('@grid').to.not.be.visible;
         this.pivotContainer.expect.section('@charts').to.be.visible;
     });
 
 
-    it('Check Using API calls view toggle(grid)', (client) => {
+    it('Check Using API calls view toggle(grid)', () => {
         this.pivotContainer.section.viewToggle.expect
             .element('@viewCheckbox').to.not.be.selected;
-        client
-            .waitForElementVisible('#viewToggle').click('#viewToggle label');
+        this.pivotContainer.section.viewToggle.click('@viewCheckboxLabel');
         this.pivotContainer.section.viewToggle.expect
             .element('@viewCheckbox').to.be.selected;
         this.pivotContainer.section.viewToggle.expect
             .element('@viewCheckboxLabel').text.to.be.equal("Grid");
-        browser.assert.cssProperty("#viewToggle label", "background-color", "rgba(0, 164, 90, 1)");
+        this.pivotContainer.section.viewToggle
+            .assert.cssProperty("@viewCheckboxLabel", "background-color", "rgba(0, 164, 90, 1)");
         this.pivotContainer.expect.section('@grid').to.be.visible;
     });
 
     it('Check Using API calls mode toggle(read-only)', (client) => {
         this.pivotContainer.section.modeToggle.expect.element('@modeCheckbox').to.be.selected;
-        client
-            .waitForElementVisible('#modeToggle').click('#modeToggle label');
+        this.pivotContainer.section.modeToggle.click('@modeCheckboxLabel');
         this.pivotContainer.section.modeToggle.expect
             .element('@modeCheckbox').to.not.be.selected;
         this.pivotContainer.section.modeToggle.expect
             .element('@modeCheckboxLabel').text.to.be.equal("Read-only");
-        client.assert.cssProperty("#modeToggle label", "background-color", "rgba(223, 56, 0, 1)");
+        this.pivotContainer.section.modeToggle
+            .assert.cssProperty("@modeCheckboxLabel", "background-color", "rgba(223, 56, 0, 1)");
         this.pivotContainer.expect.section('@configuratorButton').to.not.be.visible;
-        // browser.click('#modeToggle label');
     });
 
     it('Check Using API calls mode toggle(interactive)', (client) => {
         this.pivotContainer.section.modeToggle.expect.element('@modeCheckbox').to.not.be.selected;
-        client
-            .waitForElementVisible('#modeToggle').click('#modeToggle label');
+        this.pivotContainer.section.modeToggle.click('@modeCheckboxLabel');
         this.pivotContainer.section.modeToggle.expect
             .element('@modeCheckbox').to.be.selected;
         this.pivotContainer.section.modeToggle.expect
             .element('@modeCheckboxLabel').text.to.be.equal("Interactive");
-        client.assert.cssProperty("#modeToggle label", "background-color", "rgba(0, 164, 90, 1)");
+        this.pivotContainer.section.modeToggle.
+        assert.cssProperty('@modeCheckboxLabel', "background-color", "rgba(0, 164, 90, 1)");
         this.pivotContainer.expect.section('@configuratorButton').to.be.visible;
     });
 
-    it("Switch to column chart", (client) => {
-        client.waitForElementVisible('#viewToggle').click('#viewToggle label');
+    it("Switch to column chart", () => {
+        this.pivotContainer.section.viewToggle.click('@viewCheckboxLabel');
         this.pivotContainer.expect.section('@charts').to.be.visible;
     })
 
