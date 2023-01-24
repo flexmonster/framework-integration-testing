@@ -1,4 +1,4 @@
-xdescribe('testing using API calls page', () => {
+describe('testing using API calls page', () => {
 
     before((client) => {
         this.currentPage = client.page.apiCallsPage();

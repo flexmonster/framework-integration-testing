@@ -1,10 +1,16 @@
 describe('testing Customizing Grid page', () => {
+
     before((client) => {
         this.currentPage = client.page.customizingGridPage();
+        this.currentPage.navigate();
+
+        //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.calculatedValuesPopup = client.page.commons.calculatedValues();
+
+        //selectors
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.grid = this.pivotContainer.section.pivotGrid;
         this.filterPopup=this.grid.section.filterPopup;
@@ -13,10 +19,9 @@ describe('testing Customizing Grid page', () => {
         this.fieldListContent = this.fieldList.section.fieldListContent;
         this.numberFormattingPopup = this.pivotContainer.section.numberFormattingPopup;
         this.conditionalFormattingPopup = this.pivotContainer.section.conditionalFormattingPopup;
-        this.currentPage.navigate();
     });
 
-    xit("Checks common sections", () => {
+    it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
@@ -47,7 +52,7 @@ describe('testing Customizing Grid page', () => {
         this.pivotContainer.section.toggle.assert.cssProperty("@checkboxLabel", "background-color", "rgba(193, 193, 193, 1)");
     });
 
-    it('Check Customizing the grid Toggle (enabled)', () => {
+    it('Check Customizing the grid Toggle (enabled)', (client) => {
         this.pivotContainer.section.toggle.expect.element('@checkbox').to.not.be.selected;
         this.pivotContainer.section.toggle.click('@checkboxLabel');
 
@@ -55,7 +60,8 @@ describe('testing Customizing Grid page', () => {
         this.pivotContainer.section.toggle.expect.element('@checkboxLabel')
             .text.to.be.equal("The grid cells are customized");
         this.pivotContainer.section.toggle.assert.cssProperty('@checkboxLabel', "background-color", "rgba(0, 164, 90, 1)");
-        this.pivotContainer.assert.cssProperty('div[data-r="3"][data-c="1"]', "background-color", "rgba(0, 164, 90, 1)");
+        client.waitForElementPresent('div[data-r="3"][data-c="1"]');
+        client.assert.cssProperty('div[data-r="3"][data-c="1"]', "background-color", "rgba(0, 164, 90, 1)");
     });
 
     it('Open the Field List', () => {
@@ -127,8 +133,8 @@ describe('testing Customizing Grid page', () => {
         this.filterPopup.click("@applyFilterButton");
     })
 
-    it('Sort rows', () => {
-        this.grid.expect.element('div[data-r="3"][data-c="1"]').text.to.contain('94 634');
+    it('Sort rows', (client) => {
+        client.expect.element('div[data-r="3"][data-c="1"]').text.to.contain('94 634');
         this.grid.section.rowMembers.click('@sumOfPriceSortingArrow');
         this.grid.section.rowMembers.expect.element('@sumOfPriceLabel').text.to.be.equal('Sum of Price');
         this.grid.expect.element('div[data-r="3"][data-c="1"]').text.to.contain('113 885');

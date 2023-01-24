@@ -1,13 +1,20 @@
-xdescribe('testing page With amCharts', () => {
+describe('testing page With amCharts', () => {
+
     before((client) => {
+
         this.currentPage = client.page.amchartsPage();
+
+        //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
+
+        //selectors
         this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
+
         this.currentPage.navigate();
     });
 

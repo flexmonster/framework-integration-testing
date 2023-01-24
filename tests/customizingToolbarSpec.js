@@ -1,13 +1,15 @@
-xdescribe('testing Customizing Toolbar page', () => {
+describe('testing Customizing Toolbar page', () => {
     before((client) => {
         this.currentPage = client.page.customizingToolbarPage();
+        this.pivotContainer = this.currentPage.section.pivotContainer;
+        this.currentPage.navigate();
+
+        //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.fieldList = client.page.commons.fieldList();
         this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
-        this.pivotContainer = this.currentPage.section.pivotContainer;
-        this.currentPage.navigate();
     });
 
     it("Checks common sections", () => {

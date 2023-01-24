@@ -1,15 +1,20 @@
-xdescribe('testing Update data page', () => {
+describe('testing Update data page', () => {
 
     before((client) => {
         this.currentPage = client.page.updateDataPage();
+
+        //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.calculatedValuesPopup = client.page.commons.calculatedValues();
+
+        //selectors
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.grid = this.pivotContainer.section.pivotGrid;
         this.fieldList = this.pivotContainer.section.fieldList;
         this.fieldListContent = this.fieldList.section.fieldListContent;
+
         this.currentPage.navigate();
     });
 

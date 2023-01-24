@@ -1,14 +1,17 @@
-xdescribe('testing events page', () => {
+describe('testing events page', () => {
+
     before((client) => {
         this.currentPage = client.page.eventsPage();
+        this.pivotContainer = this.currentPage.section.pivotContainer;
+        this.currentPage.navigate();
+
+        //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
         this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
-        this.pivotContainer = this.currentPage.section.pivotContainer;
-        this.currentPage.navigate();
     });
 
     it("Checks common sections", () => {
@@ -43,7 +46,6 @@ xdescribe('testing events page', () => {
             .waitForElementVisible('#eventsToggle')
             .click('#eventsToggle label');
         this.pivotContainer.section.toggle.expect.element('@checkbox').to.not.be.selected;
-
         this.pivotContainer.section.toggle.expect.element('@checkboxLabel').text.to.be.equal("Events are not tracked")
         client.assert.cssProperty("#eventsToggle label", "background-color", "rgba(193, 193, 193, 1)");
         client
@@ -51,29 +53,18 @@ xdescribe('testing events page', () => {
             .click('#eventsToggle label');
     });
 
-    it('Check event outputs', () => {
+    it('Check and clear events output', (client) => {
+        client.execute(function () {
+            window.scrollTo({top: 600});
+        })
         this.pivotContainer
             .expect.section('@eventsOutput').to.be.visible;
         this.pivotContainer.section.eventsOutput
             .expect.element('@firstLine').to.be.visible;
-    });
-
-    it('Check clear output button', () => {
         this.pivotContainer.section.clearOutput
             .expect.element('@clearOutputButton').to.be.visible;
-        // this.pivotContainer.section.clearOutput.click('@clearOutputButton');
-       // this.pivotContainer.section.eventsOutput.expect.element('@firstLine').to.not.be.present;
-    });
-
-    //is failing sometimes
-    xit('Check event cellclick output', (client) => {
-        client
-            .waitForElementVisible('css selector', '#eventsToggle')
-            .click('#eventsToggle label');
-        client.click('css selector', 'div.fm-ui-element:nth-child(10) > div:nth-child(1) > div:nth-child(1)');
-        client.waitForElementVisible('css selector', '.content > div:nth-child(1)');
-        this.pivotContainer.section.eventsOutput
-            .expect.element('@firstLine').text.to.contain("cellclick");
+        this.pivotContainer.section.clearOutput.click('@clearOutputButton');
+        this.pivotContainer.section.eventsOutput.expect.element('@firstLine').to.not.be.present;
     });
 
 
