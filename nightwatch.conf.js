@@ -31,7 +31,7 @@ module.exports = {
                     ]
                 }
             },
-            launchUrl: 'http://localhost:8080/',
+            launchUrl: 'http://127.0.0.1:5173/',
             globals: {
                 // NIGHTWATCH_VERSION is defined as an environment variable (.env files are supported also)
                 nightwatchVersion: '${NIGHTWATCH_VERSION}'

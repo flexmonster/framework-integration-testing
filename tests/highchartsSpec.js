@@ -156,7 +156,7 @@ describe('testing page With Highcharts', () => {
             .expect.element('@contextMenuRow3').text.to.be.equal("Clear sorting");
         this.contextMenu.click('@contextMenuRow3');
         client.waitForElementPresent('div[data-r="3"][data-c="1"]');
-        this.grid.expect.element('div[data-r="3"][data-c="1"]').text.to.contain('$732');
+        client.expect.element('div[data-r="3"][data-c="1"]').text.to.contain('$732');
     })
 
     it('Drill through a value using context menu', (client) => {
