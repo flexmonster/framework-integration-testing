@@ -1,41 +1,96 @@
-require('dotenv').config();
-const chromedriver = require('chromedriver');
+// Refer to the online docs for more details:
+// https://nightwatchjs.org/gettingstarted/configuration/
+//
+
+//  _   _  _         _      _                     _          _
+// | \ | |(_)       | |    | |                   | |        | |
+// |  \| | _   __ _ | |__  | |_ __      __  __ _ | |_   ___ | |__
+// | . ` || | / _` || '_ \ | __|\ \ /\ / / / _` || __| / __|| '_ \
+// | |\  || || (_| || | | || |_  \ V  V / | (_| || |_ | (__ | | | |
+// \_| \_/|_| \__, ||_| |_| \__|  \_/\_/   \__,_| \__| \___||_| |_|
+//             __/ |
+//            |___/
 
 module.exports = {
+    // An array of folders (excluding subfolders) where your tests are located;
+    // if this is not specified, the test source must be passed as the second argument to the test runner.
     src_folders: ['tests'],
-    page_objects_path: './lib/pages',
-    //custom_commands_path : 'lib/custom-commands',
-    //custom_assertions_path : 'lib/custom-assertions'
 
-    webdriver: {
-        port: 9515,
-        server_path: chromedriver.path,
-        start_process: true,
-        cli_args: [
-            "--no-sandbox",
-            '--port=9515'
-        ]
+    // See https://nightwatchjs.org/guide/concepts/page-object-model.html
+    page_objects_path: ['lib/pages'],
+
+    // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-commands.html
+    //custom_commands_path: ['nightwatch/custom-commands'],
+
+    // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-assertions.html
+    //custom_assertions_path: ['nightwatch/custom-assertions'],
+
+    // See https://nightwatchjs.org/guide/extending-nightwatch/adding-plugins.html
+    plugins: [],
+
+    // See https://nightwatchjs.org/guide/concepts/test-globals.html
+    globals_path: '',
+
+    webdriver: {},
+
+    test_workers: {
+        enabled: true
     },
 
     test_settings: {
         default: {
+            disable_error_log: false,
+            launch_url: 'http://localhost:5173',
+
+            screenshots: {
+                enabled: false,
+                path: 'screens',
+                on_failure: true
+            },
+
             desiredCapabilities: {
-                alwaysMatch: {
-                    acceptInsecureCerts: true
-                },
+                browserName: 'chrome'
+            },
+
+            webdriver: {
+                start_process: true,
+                server_path: ''
+            },
+
+        },
+
+        chrome: {
+            desiredCapabilities: {
                 browserName: 'chrome',
-                chromeOptions: {
-                    w3c: false,
+                'goog:chromeOptions': {
+                    // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
+                    //
+                    // w3c:false tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
+                    w3c: true,
                     args: [
-                        "window-size=1280,800"                       
+                        "disable-gpu",
+                        "headless",
+                        "window-size=1920,1080"
+                        //'--no-sandbox',
+                        //'--ignore-certificate-errors',
+                        //'--allow-insecure-localhost',
+                        //'--headless'
                     ]
                 }
             },
-            launchUrl: 'http://127.0.0.1:5173/',
-            globals: {
-                // NIGHTWATCH_VERSION is defined as an environment variable (.env files are supported also)
-                nightwatchVersion: '${NIGHTWATCH_VERSION}'
+
+            webdriver: {
+                start_process: true,
+                server_path: '',
+                cli_args: [
+                    "disable-gpu",
+                    "headless",
+                    "window-size=1920,1080"
+                    // --verbose
+                ]
             }
-        }
-    }
+        },
+
+    },
+
 };

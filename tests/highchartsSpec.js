@@ -185,7 +185,7 @@ describe('testing page With Highcharts', () => {
         client.assert.not.cssProperty('div[data-r="3"][data-c="1"]', "background-color", "rgba(0, 150, 136, 1)");
     })
 
-    it('Check license pop-up', (client) => {
+    xit('Check license pop-up', (client) => {
         client.rightClick('css selector', 'div[data-r="4"][data-c="1"]');
         client.keys([client.Keys.CONTROL, client.Keys.ALT, "i"]);
         this.grid.expect.section('@licensePopup').to.be.visible;

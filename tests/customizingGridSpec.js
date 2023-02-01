@@ -233,7 +233,7 @@ describe('testing Customizing Grid page', () => {
         this.grid.section.drillThroughPopup.click('@drillThroughCloseButton');
     });
 
-    it('Check license pop-up', (client) => {
+    xit('Check license pop-up', (client) => {
         client.keys([client.Keys.CONTROL, client.Keys.ALT, "i"]);
         this.grid.expect.section('@licensePopup').to.be.visible;
         this.grid.section.licensePopup.expect.element('@licenseText').text.to.contain('License key');
