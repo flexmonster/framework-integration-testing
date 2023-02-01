@@ -1,9 +1,10 @@
 describe('check Flexmonster Demo page', () => {
 
     before((client) => {
-        client.resizeWindow(1280, 800);
+
         this.currentPage = client.page.demoPage();
         this.currentPage.navigate();
+        client.resizeWindow(1280, 800);
 
         //common sections
         this.sidebar = client.page.commons.sidebar();
