@@ -96,7 +96,7 @@ describe('testing Customizing Grid page', () => {
         this.pivotContainer.section.calculatedValuesPopup.doubleClick('@calcValBTField');
         client.setValue('input.fm-ui-element:nth-child(1)', calculatedFormulaName);
         client.execute(function () {
-            window.scrollTo({top: 0});
+            window.scrollTo({top: 300});
         }, []);
         this.pivotContainer.section.calculatedValuesPopup
             .waitForElementVisible("@applyCalcValPopupButton")
