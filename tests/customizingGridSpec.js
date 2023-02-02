@@ -172,7 +172,7 @@ describe('testing Customizing Grid page', () => {
         this.numberFormattingPopup.click('@thousandsSeparatorComma');
         this.numberFormattingPopup.click('@numberFormattingApplyButton');
         this.pivotContainer.expect.section('@numberFormattingPopup').to.not.be.present;
-        this.grid.expect.element('div[data-r="3"][data-c="1"]').text.to.contain('94,634');
+        client.expect.element('div[data-r="3"][data-c="1"]').text.to.contain('94,634');
     })
 
 
