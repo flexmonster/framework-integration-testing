@@ -20,9 +20,9 @@ module.exports = {
 
     webdriver: {},
 
-    test_workers: {
-        enabled: true
-    },
+    // test_workers: {
+    //     enabled: true
+    // },
 
     test_settings: {
         default: {
