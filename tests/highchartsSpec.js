@@ -1,7 +1,7 @@
 describe('testing page With Highcharts', () => {
 
     before((client) => {
-        client.resizeWindow(1280, 800);
+        client.resizeWindow(1700, 1200);
         this.currentPage = client.page.highchartsPage();
         this.currentPage.navigate();
 
