@@ -2,7 +2,8 @@ describe('testing using API calls page', () => {
 
     before((client) => {
         this.currentPage = client.page.apiCallsPage();
-        client.resizeWindow(1700, 1200);
+        client.windowMaximize()
+        //client.resizeWindow(1700, 1200);
         //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();

@@ -1,7 +1,8 @@
 describe('testing Customizing Grid page', () => {
 
     before((client) => {
-        client.resizeWindow(1700, 1200);
+        client.windowMaximize()
+        //client.resizeWindow(1700, 1200);
         this.currentPage = client.page.customizingGridPage();
         this.currentPage.navigate();
 

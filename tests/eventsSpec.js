@@ -1,7 +1,8 @@
 describe('testing events page', () => {
 
     before((client) => {
-        client.resizeWindow(1700, 1200);
+        //client.resizeWindow(1700, 1200);
+        client.windowMaximize();
         this.currentPage = client.page.eventsPage();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
