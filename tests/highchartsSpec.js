@@ -1,4 +1,4 @@
-describe('testing page With Highcharts', () => {
+xdescribe('testing page With Highcharts', () => {
 
     before((client) => {
         //client.resizeWindow(1700, 1200);

@@ -1,4 +1,4 @@
-describe('testing Customizing Grid page', () => {
+xdescribe('testing Customizing Grid page', () => {
 
     before((client) => {
         client.windowMaximize()

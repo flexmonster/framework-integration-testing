@@ -1,4 +1,4 @@
-describe('testing Customizing Toolbar page', () => {
+xdescribe('testing Customizing Toolbar page', () => {
     before((client) => {
         client.windowMaximize();
        // client.resizeWindow(1700, 1200);

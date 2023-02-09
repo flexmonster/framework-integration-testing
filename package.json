@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-single": "nightwatch --reporter html-reporter.js",
+    "test": "nightwatch --reporter html-reporter.js",
     "test-chrome": "nightwatch",
-    "test": "nightwatch --test tests\\apiCallsSpec.js"
+    "test-single": "nightwatch --test tests\\apiCallsSpec.js"
   },
   "repository": {
     "type": "git",

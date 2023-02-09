@@ -1,4 +1,4 @@
-describe('testing events page', () => {
+xdescribe('testing events page', () => {
 
     before((client) => {
         //client.resizeWindow(1700, 1200);

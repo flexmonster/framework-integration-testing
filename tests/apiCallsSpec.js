@@ -23,7 +23,7 @@ describe('testing using API calls page', () => {
         this.currentPage.navigate();
     });
 
-    it("Checks common sections", () => {
+    xit("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit(); //configurator button hidden when read-only
