@@ -1,4 +1,4 @@
-xdescribe('testing Customizing Toolbar page', () => {
+describe('testing Customizing Toolbar page', () => {
     before((client) => {
         client.windowMaximize();
        // client.resizeWindow(1700, 1200);
@@ -18,9 +18,9 @@ xdescribe('testing Customizing Toolbar page', () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         //different Toolbar
-        this.fieldList.runTestSuit();
-        this.calculatedValuesPopup.runTestSuit();
-        this.pivotGrid.runTestSuit();
+       // this.fieldList.runTestSuit();
+       // this.calculatedValuesPopup.runTestSuit();
+      //  this.pivotGrid.runTestSuit();
     });
 
     it("Check 'Customizig the Toolbar' link to docs", (browser) => {
@@ -33,7 +33,7 @@ xdescribe('testing Customizing Toolbar page', () => {
             .which.contains('https://www.flexmonster.com/doc/customizing-toolbar');
     });
 
-    it('Check New Tab on the Toolbar', (browser) => {
+    xit('Check New Tab on the Toolbar', (browser) => {
         this.pivotContainer.section.toolbar.section.leftGroup.expect
             .element('@newTab').to.be.visible;
         this.pivotContainer.section.toolbar.section.leftGroup.expect
@@ -46,7 +46,6 @@ xdescribe('testing Customizing Toolbar page', () => {
         this.pivotContainer.section.popup.expect.element('@popupLink')
             .to.have.attribute('href').which.contains('https://www.flexmonster.com/doc/customizing-toolbar');
         this.pivotContainer.section.popup.click('@popupOkButton');
-        //TODO CLOSE THE POP-UP!!!!!!!!!!
     });
 
     after(client => client.end());

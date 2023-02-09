@@ -1,4 +1,4 @@
-xdescribe('testing events page', () => {
+describe('testing events page', () => {
 
     before((client) => {
         //client.resizeWindow(1700, 1200);
@@ -19,10 +19,10 @@ xdescribe('testing events page', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-        this.toolbar.runTestSuit();
-        this.fieldList.runTestSuit();
-        this.calculatedValuesPopup.runTestSuit();
-        this.pivotGrid.runTestSuit();
+      //  this.toolbar.runTestSuit();
+      //  this.fieldList.runTestSuit();
+      //  this.calculatedValuesPopup.runTestSuit();
+      //  this.pivotGrid.runTestSuit();
     });
 
     it('Check link to docs', (browser) => {

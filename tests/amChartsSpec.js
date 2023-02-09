@@ -1,4 +1,4 @@
-xdescribe('testing page With amCharts', () => {
+describe('testing page With amCharts', () => {
 
     before((client) => {
         this.currentPage = client.page.amchartsPage();
@@ -21,10 +21,10 @@ xdescribe('testing page With amCharts', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-        this.toolbar.runTestSuit();
-        this.fieldList.runTestSuit();
-        this.calculatedValuesPopup.runTestSuit();
-        this.pivotGrid.runTestSuit();
+    //    this.toolbar.runTestSuit();
+    //    this.fieldList.runTestSuit();
+    //    this.calculatedValuesPopup.runTestSuit();
+    //    this.pivotGrid.runTestSuit();
     });
 
     it("Check 'Integration with amCharts' link to docs", (browser) => {

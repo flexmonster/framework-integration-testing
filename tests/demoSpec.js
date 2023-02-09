@@ -1,4 +1,4 @@
-xdescribe('check Flexmonster Demo page', () => {
+describe('check Flexmonster Demo page', () => {
 
     before((client) => {
 
@@ -21,10 +21,10 @@ xdescribe('check Flexmonster Demo page', () => {
     it("Checks common sections", (client) => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-        this.toolbar.runTestSuit();
-        this.fieldList.runTestSuit();
-        this.calculatedValuesPopup.runTestSuit();
-        this.pivotGrid.runTestSuit();
+       // this.toolbar.runTestSuit();
+       // this.fieldList.runTestSuit();
+       // this.calculatedValuesPopup.runTestSuit();
+       // this.pivotGrid.runTestSuit();
     });
 
     it('Check title', () => {

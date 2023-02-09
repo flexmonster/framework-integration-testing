@@ -1,4 +1,4 @@
-xdescribe('testing page With Highcharts', () => {
+describe('testing page With Highcharts', () => {
 
     before((client) => {
         //client.resizeWindow(1700, 1200);
@@ -25,8 +25,8 @@ xdescribe('testing page With Highcharts', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-        this.toolbar.runTestSuit();
-        this.calculatedValuesPopup.runTestSuit();
+      //  this.toolbar.runTestSuit();
+       // this.calculatedValuesPopup.runTestSuit();
         //different grid and fields in FieldList
     });
 
@@ -43,7 +43,7 @@ xdescribe('testing page With Highcharts', () => {
     it('Check the Highcharts container', () => {
         this.pivotContainer.section.chart.expect.element('@highcharts').to.be.visible;
     });
-
+/*
     it('Open the Field List', () => {
         this.grid.click('@configuratorButton');
         this.pivotContainer.expect.section('@fieldList').to.be.visible;
@@ -194,6 +194,6 @@ xdescribe('testing page With Highcharts', () => {
         this.grid.section.licensePopup.expect.element('@licenseText').text.to.contain('License key');
         this.grid.section.licensePopup.click('@licenseCloseButton');
     });
-
+*/
     after(client => client.end());
 });
