@@ -24,7 +24,7 @@ describe('check Flexmonster Demo page', () => {
        // this.toolbar.runTestSuit();
        // this.fieldList.runTestSuit();
        // this.calculatedValuesPopup.runTestSuit();
-       // this.pivotGrid.runTestSuit();
+        this.pivotGrid.runTestSuit();
     });
 
     it('Check title', () => {

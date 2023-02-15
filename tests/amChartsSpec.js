@@ -24,7 +24,7 @@ describe('testing page With amCharts', () => {
     //    this.toolbar.runTestSuit();
     //    this.fieldList.runTestSuit();
     //    this.calculatedValuesPopup.runTestSuit();
-    //    this.pivotGrid.runTestSuit();
+        this.pivotGrid.runTestSuit();
     });
 
     it("Check 'Integration with amCharts' link to docs", (browser) => {

@@ -20,7 +20,7 @@ describe('testing Customizing Toolbar page', () => {
         //different Toolbar
        // this.fieldList.runTestSuit();
        // this.calculatedValuesPopup.runTestSuit();
-      //  this.pivotGrid.runTestSuit();
+        this.pivotGrid.runTestSuit();
     });
 
     it("Check 'Customizig the Toolbar' link to docs", (browser) => {
