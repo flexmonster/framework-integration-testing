@@ -210,7 +210,9 @@ describe('testing Customizing Grid page', () => {
             .assert.hasClass('@conditionsDropdownListLessThan','fm-selected');
         this.conditionalFormattingPopup.section.conditionsDropdown
             .click('@conditionsDropdownListGreaterThan');
-
+        client.execute(function () {
+            window.scrollTo({top: 300});
+        }, []);
         this.conditionalFormattingPopup.expect.section('@colorPick').to.be.visible;
         this.conditionalFormattingPopup.section.colorPick.click('@colorPickButton');
         this.conditionalFormattingPopup.section.colorPick.expect.element('@colorPickPopup').to.be.visible;
