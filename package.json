@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nightwatch --reporter html-reporter.js",
     "test-chrome": "nightwatch",
-    "test-single": "nightwatch --test tests\\apiCallsSpec.js"
+    "test-single": "nightwatch --test tests\\highchartsSpec.js"
   },
   "repository": {
     "type": "git",

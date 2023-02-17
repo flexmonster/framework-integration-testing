@@ -149,6 +149,7 @@ describe('testing page With Highcharts', () => {
 
     it('Check member header context menu', (client) => {
         this.grid.section.rowMembers.rightClick("@countryAustralia");
+        this.grid.section.rowMembers.rightClick("@countryAustralia");
         this.grid.expect.section('@contextMenu').to.be.visible;
         this.contextMenu
             .expect.element('@contextMenuRow1').text.to.be.equal("Collapse");
