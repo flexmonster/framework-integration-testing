@@ -93,7 +93,7 @@ describe('testing using API calls page', () => {
         assert.cssProperty('@modeCheckboxLabel', "background-color", "rgba(0, 164, 90, 1)");
         this.pivotContainer.expect.section('@configuratorButton').to.be.visible;
     });
-/*
+
     it("Switch to column chart", () => {
         this.pivotContainer.section.viewToggle.click('@viewCheckboxLabel');
         this.pivotContainer.expect.section('@charts').to.be.visible;
@@ -193,6 +193,6 @@ describe('testing using API calls page', () => {
     it("Return to initial page state", (client) => {
         client.refresh();
     });
-*/
+
     after(client => client.end());
 });

@@ -34,7 +34,7 @@ describe('testing Update data page', () => {
             .expect.element('@toUpdateDataLink').to.have.attribute('href')
             .which.contains('https://www.flexmonster.com/api/updatedata');
     });
-/*
+
     it('Check update data button', (client) => {
         this.pivotContainer.expect.element('@updateDataButton').to.be.visible;
         const cellValue = '100';//TODO try to extract value from cell using Nightwatch API
@@ -44,7 +44,7 @@ describe('testing Update data page', () => {
         client.expect.element('div[data-r="1"][data-c="1"]').text.to.not.be.equal(cellValue);
     });
 
-
+/*
     it('Open the Field List', () => {
         this.grid.click('@configuratorButton');
         this.pivotContainer.expect.section('@fieldList').to.be.visible;
@@ -84,8 +84,6 @@ describe('testing Update data page', () => {
         this.fieldListContent.section.measuresList
             .expect.element('@formulaMeasureCaption').text.to.be.equal(calculatedFormulaName);
     });
-
-
 
     it('Closing the FieldList', () => {
         this.fieldList.section.fieldListHeader.click('@fieldsCancelButton');

@@ -111,7 +111,7 @@ describe('testing Customizing Grid page', () => {
         this.fieldList.section.fieldListHeader.click('@fieldsCancelButton');
         this.pivotContainer.expect.section('@fieldList').to.not.be.present;
     });
-
+*/
     it('Check filters pop-up', (client) => {
         this.grid.section.headers.expect.element('@categoryFilter').to.be.visible;
         this.grid.section.headers.click('@categoryFilter');
@@ -241,6 +241,6 @@ describe('testing Customizing Grid page', () => {
         this.grid.section.licensePopup.expect.element('@licenseText').text.to.contain('License key');
         this.grid.section.licensePopup.click('@licenseCloseButton');
     });
-*/
+
     after(client => client.end());
 });
