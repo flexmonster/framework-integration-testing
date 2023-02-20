@@ -25,7 +25,7 @@ describe('testing page With Highcharts', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-      //  this.toolbar.runTestSuit();
+        this.toolbar.runTestSuit();
        // this.calculatedValuesPopup.runTestSuit();
         //different grid and fields in FieldList
     });

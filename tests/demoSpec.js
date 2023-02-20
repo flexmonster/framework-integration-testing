@@ -21,10 +21,10 @@ describe('check Flexmonster Demo page', () => {
     it("Checks common sections", (client) => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-       // this.toolbar.runTestSuit();
        // this.fieldList.runTestSuit();
        // this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
+        this.toolbar.runTestSuit();
     });
 
     it('Check title', () => {

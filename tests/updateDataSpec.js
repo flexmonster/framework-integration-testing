@@ -23,7 +23,7 @@ describe('testing Update data page', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-     //   this.toolbar.runTestSuit();
+        this.toolbar.runTestSuit();
      //   this.calculatedValuesPopup.runTestSuit();
         //different grid and fields in Field List
     });
