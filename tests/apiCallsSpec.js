@@ -27,10 +27,11 @@ describe('testing using API calls page', () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
      //
-    //    this.fieldList.runTestSuit();
+    //
      //   this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
         this.toolbar.runTestSuit(); //configurator button hidden when read-only
+        this.fieldList.runTestSuit();
     });
 
     it('Check Using API calls link to docs', () => {

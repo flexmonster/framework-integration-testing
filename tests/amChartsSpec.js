@@ -21,11 +21,10 @@ describe('testing page With amCharts', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-    //
-    //    this.fieldList.runTestSuit();
     //    this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
         this.toolbar.runTestSuit();
+        this.fieldList.runTestSuit();
     });
 
     it("Check 'Integration with amCharts' link to docs", (browser) => {
