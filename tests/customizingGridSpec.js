@@ -65,7 +65,7 @@ describe('testing Customizing Grid page', () => {
         client.waitForElementPresent('div[data-r="3"][data-c="1"]');
         client.assert.cssProperty('div[data-r="3"][data-c="1"]', "background-color", "rgba(0, 164, 90, 1)");
     });
-/*
+
     it('Open the Field List', () => {
         this.grid.click('@configuratorButton');
         this.pivotContainer.expect.section('@fieldList').to.be.visible;
@@ -111,7 +111,7 @@ describe('testing Customizing Grid page', () => {
         this.fieldList.section.fieldListHeader.click('@fieldsCancelButton');
         this.pivotContainer.expect.section('@fieldList').to.not.be.present;
     });
-*/
+
     it('Check filters pop-up', (client) => {
         this.grid.section.headers.expect.element('@categoryFilter').to.be.visible;
         this.grid.section.headers.click('@categoryFilter');

@@ -44,7 +44,7 @@ describe('testing page With Highcharts', () => {
         this.pivotContainer.section.chart.expect.element('@highcharts').to.be.visible;
     });
 
-    /*it('Open the Field List', () => {
+  it('Open the Field List', () => {
         this.grid.click('@configuratorButton');
         this.pivotContainer.expect.section('@fieldList').to.be.visible;
     });
@@ -87,7 +87,7 @@ describe('testing page With Highcharts', () => {
     it('Closing the FieldList', () => {
         this.fieldList.section.fieldListHeader.click('@fieldsCancelButton');
         this.pivotContainer.expect.section('@fieldList').to.not.be.present;
-    });*/
+    });
 
     it('Check filters pop-up', (client) => {
         this.grid.section.headers.expect.element('@countryFilter').to.be.visible;

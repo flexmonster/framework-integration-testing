@@ -44,7 +44,7 @@ describe('testing Update data page', () => {
         client.expect.element('div[data-r="1"][data-c="1"]').text.to.not.be.equal(cellValue);
     });
 
-/*
+
     it('Open the Field List', () => {
         this.grid.click('@configuratorButton');
         this.pivotContainer.expect.section('@fieldList').to.be.visible;
@@ -89,7 +89,7 @@ describe('testing Update data page', () => {
         this.fieldList.section.fieldListHeader.click('@fieldsCancelButton');
         this.pivotContainer.expect.section('@fieldList').to.not.be.present;
     });
-*/
+
     after(client => client.end());
 
 });

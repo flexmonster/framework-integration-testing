@@ -65,8 +65,6 @@ describe('testing events page', () => {
             .expect.element('@firstLine').to.be.visible;
         this.pivotContainer.section.clearOutput
             .expect.element('@clearOutputButton').to.be.visible;
-        //this.pivotContainer.section.clearOutput.click('@clearOutputButton');
-        //this.pivotContainer.section.eventsOutput.expect.element('@firstLine').to.not.be.present;
     });
 
 
