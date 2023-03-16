@@ -10,7 +10,6 @@ describe('testing Customizing Toolbar page', () => {
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.fieldList = client.page.commons.fieldList();
-        this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
     });
 
@@ -18,8 +17,6 @@ describe('testing Customizing Toolbar page', () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         //different Toolbar
-       //
-       // this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
         this.fieldList.runTestSuit();
     });

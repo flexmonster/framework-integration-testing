@@ -12,15 +12,12 @@ describe('testing events page', () => {
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
-        this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
     });
 
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-      //
-      //  this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
         this.toolbar.runTestSuit();
         this.fieldList.runTestSuit();

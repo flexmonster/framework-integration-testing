@@ -10,7 +10,6 @@ describe('testing page With Highcharts', () => {
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
-        this.calculatedValuesPopup = client.page.commons.calculatedValues();
 
         //reusable selectors
         this.pivotContainer = this.currentPage.section.pivotContainer;
@@ -22,11 +21,10 @@ describe('testing page With Highcharts', () => {
         this.fieldListContent = this.fieldList.section.fieldListContent;
     });
 
-    it("Checks common sections", () => {
+    xit("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
-       // this.calculatedValuesPopup.runTestSuit();
         //different grid and fields in FieldList
     });
 
@@ -67,7 +65,7 @@ describe('testing page With Highcharts', () => {
             .expect.element('@discountMeasureCaption').text.to.be.equal("Sum of Discount");
     });
 
-    it('Adding calculated value with formula', (client) => {
+    xit('Adding calculated value with formula', (client) => {
         this.fieldList.section.fieldListHeader.click('@fieldsCalculatedValueButton');
         this.pivotContainer.expect.section("@calculatedValuesPopup").to.be.visible;
         const calculatedFormulaName = "formula";

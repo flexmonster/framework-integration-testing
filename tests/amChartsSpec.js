@@ -11,7 +11,6 @@ describe('testing page With amCharts', () => {
         this.fieldList = client.page.commons.fieldList();
 
         //selectors
-        this.calculatedValuesPopup = client.page.commons.calculatedValues();
         this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
 
@@ -21,7 +20,6 @@ describe('testing page With amCharts', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-    //    this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
         this.toolbar.runTestSuit();
         this.fieldList.runTestSuit();

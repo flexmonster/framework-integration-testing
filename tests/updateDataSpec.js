@@ -9,7 +9,6 @@ describe('testing Update data page', () => {
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
-        this.calculatedValuesPopup = client.page.commons.calculatedValues();
 
         //selectors
         this.pivotContainer = this.currentPage.section.pivotContainer;
@@ -24,7 +23,6 @@ describe('testing Update data page', () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
-     //   this.calculatedValuesPopup.runTestSuit();
         //different grid and fields in Field List
     });
 

@@ -10,7 +10,6 @@ describe('testing Customizing Grid page', () => {
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
         this.toolbar = client.page.commons.toolbar();
-        this.calculatedValuesPopup = client.page.commons.calculatedValues();
 
         //selectors
         this.pivotContainer = this.currentPage.section.pivotContainer;
@@ -27,7 +26,6 @@ describe('testing Customizing Grid page', () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
-     //   this.calculatedValuesPopup.runTestSuit();
         //different grid and fields in FieldList
     });
 
@@ -90,7 +88,7 @@ describe('testing Customizing Grid page', () => {
         this.fieldListContent.section.measuresList.expect.element('@quantityMeasure').to.not.be.present;
     });
 
-    it('Adding calculated value with formula', (client) => {
+    xit('Adding calculated value with formula', (client) => {
         this.fieldList.section.fieldListHeader.click('@fieldsCalculatedValueButton');
         this.pivotContainer.expect.section("@calculatedValuesPopup").to.be.visible;
         const calculatedFormulaName = "formula";

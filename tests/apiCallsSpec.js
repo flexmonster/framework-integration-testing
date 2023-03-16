@@ -10,7 +10,6 @@ describe('testing using API calls page', () => {
         this.toolbar = client.page.commons.toolbar();
         this.fieldList = client.page.commons.fieldList();
         this.pivotGrid = client.page.commons.pivotGrid();
-        this.calculatedValuesPopup = client.page.commons.calculatedValues();
 
         //selectors
         this.pivotContainer = this.currentPage.section.pivotContainer;
@@ -26,9 +25,6 @@ describe('testing using API calls page', () => {
     it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
-     //
-    //
-     //   this.calculatedValuesPopup.runTestSuit();
         this.pivotGrid.runTestSuit();
         this.toolbar.runTestSuit(); //configurator button hidden when read-only
         this.fieldList.runTestSuit();
