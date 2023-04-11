@@ -8,6 +8,7 @@
     "test-single": "nightwatch --env vue --test tests\\highchartsSpec.js",
     "test-vue": "nightwatch --env vue --reporter html-reporter.js",
     "test-react": "nightwatch --env react --reporter html-reporter.js",
+    "test-local-react": "nightwatch --env localreact --reporter html-reporter.js",
     "test-angular": "nightwatch --env angular --reporter html-reporter.js"
   },
   "repository": {

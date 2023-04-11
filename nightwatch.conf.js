@@ -27,6 +27,9 @@ module.exports = {
             launch_url: 'http://localhost:5173',
         },
         react: {
+            launch_url: 'http://10.30.0.69:3000',
+        },
+        localreact: {
             launch_url: 'http://localhost:3000',
         },
         angular: {
