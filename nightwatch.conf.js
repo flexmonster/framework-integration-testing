@@ -44,7 +44,7 @@ module.exports = {
                     args: [
                         "disable-gpu",
                         "headless",
-                        "window-size=1920,1080"
+                        "window-size=1920,1080",
                         "no-sandbox",
                         "ignore-certificate-errors",
                         "allow-insecure-localhost"
