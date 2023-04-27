@@ -45,9 +45,9 @@ module.exports = {
                         "disable-gpu",
                         "headless",
                         "window-size=1920,1080"
-                        //'--no-sandbox',
-                        //'--ignore-certificate-errors',
-                        //'--allow-insecure-localhost',
+                        "no-sandbox",
+                        "ignore-certificate-errors",
+                        "allow-insecure-localhost"
                         //'--headless'
                     ]
                 }
