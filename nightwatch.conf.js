@@ -22,6 +22,9 @@ module.exports = {
                 start_process: true,
                 server_path: ''
             },
+            globals:{
+                retryAssertionTimeout: 10000
+            }
         },
         vue: {
             launch_url: 'http://localhost:5173',
