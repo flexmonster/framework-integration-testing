@@ -1,4 +1,4 @@
-describe('check Flexmonster Demo page', () => {
+describe('check Flexmonster Composition API Demo page', () => {
 
     before((client) => {
 
