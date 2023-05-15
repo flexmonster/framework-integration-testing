@@ -9,11 +9,10 @@ module.exports = {
     //test_workers: { enabled: true },
     test_settings: {
         default: {
-            disable_error_log: false,
+            disable_error_log: true,
             screenshots: {
                 enabled: false,
-                path: 'screens',
-                on_failure: true
+                on_failure: false
             },
             desiredCapabilities: {
                 browserName: 'chrome'
