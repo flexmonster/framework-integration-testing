@@ -9,7 +9,6 @@
     "test-vue-compositionAPI": "nightwatch --env vue --test testsCompositionAPI/compositionAPISpec.js",
     "test-vue": "nightwatch --env vue --test tests",
     "test-react": "nightwatch --env react --reporter html-reporter.js",
-    "test-local-react": "nightwatch --env localreact --reporter html-reporter.js",
     "test-angular": "nightwatch --env angular --reporter html-reporter.js"
   },
   "repository": {
