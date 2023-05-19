@@ -12,7 +12,7 @@ module.exports = {
             disable_error_log: true,
             screenshots: {
                 enabled: false,
-                on_failure: false
+                on_failure: true
             },
             desiredCapabilities: {
                 browserName: 'chrome'
