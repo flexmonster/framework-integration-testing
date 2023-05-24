@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test-chrome": "nightwatch",
-    "test-single": "nightwatch --env react --test tests\\demoSpec.js",
     "test-vue-compositionAPI": "nightwatch --env vue --test testsCompositionAPI/compositionAPISpec.js",
     "test-vue": "nightwatch --env vue --test tests",
     "test-react": "nightwatch --env react --reporter html-reporter.js",
