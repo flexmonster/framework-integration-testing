@@ -10,7 +10,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     return;
   }
 
-  const modifiedData = `${data}\nwindow["flexmonsterpivottablekey"]="${key}";`;
+  const modifiedData = `${data}\n window["flexmonsterpivottablekey"]="${key}";`;
 
   fs.writeFile(filePath, modifiedData, 'utf8', (err) => {
     if (err) {
