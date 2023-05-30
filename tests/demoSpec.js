@@ -18,7 +18,7 @@ describe('check Flexmonster Demo page', () => {
         this.pivotExample = this.currentPage.section.mainContainer.section.pivotExample;
     });
 
-    it("Checks common sections", (client) => {
+    it("Checks common sections", () => {
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.pivotGrid.runTestSuit();
@@ -27,7 +27,7 @@ describe('check Flexmonster Demo page', () => {
         this.calculatedValuesPopup.runTestSuit();
     });
 
-    it('Check title', () => {
+    it('Check title', (client) => {
         client.execute(function () {
             console.log("===========KEY=========== ",window.flexmonsterpivottablekey );
         }, []);
