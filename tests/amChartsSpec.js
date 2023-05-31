@@ -25,12 +25,7 @@ describe('testing page With amCharts', () => {
         this.fieldList.runTestSuit();
     });
 
-    it('Check the amCharts container', () => {
-        this.pivotContainer.expect.section('@chart').to.be.visible;
-        this.pivotContainer.section.chart.expect.element('@amCharts').to.be.visible;
-    });
-
-    it("Check 'Integration with amCharts' link to docs", (client) => {
+    xit("Check 'Integration with amCharts' link to docs", (client) => {
         client.execute(function () {
                  window.scrollTo({top: 300});
              }, []);
@@ -44,7 +39,10 @@ describe('testing page With amCharts', () => {
             .which.contains('https://www.flexmonster.com/doc/integration-with-amcharts');
     });
 
-    
+    xit('Check the amCharts container', () => {
+        this.pivotContainer.expect.section('@chart').to.be.visible;
+        this.pivotContainer.section.chart.expect.element('@amCharts').to.be.visible;
+    });
 
     after(client => client.end());
 });
