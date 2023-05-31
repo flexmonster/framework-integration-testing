@@ -26,6 +26,7 @@ describe('testing page With amCharts', () => {
     });
 
     it("Check 'Integration with amCharts' link to docs", (browser) => {
+        this.pivotContainer.expect.section('@description').to.be.visible;
         this.pivotContainer.section.description.expect
             .element('@toAMChartsIntegrationLink').to.be.visible;
         this.pivotContainer.section.description.expect

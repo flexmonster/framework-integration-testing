@@ -28,10 +28,6 @@ describe('check Flexmonster Demo page', () => {
     });
 
     it('Check title', (client) => {
-        client.execute(function () {
-            console.log("===========KEY=========== ",window.flexmonsterpivottablekey );
-        }, []);
-       
         this.pivotExample.expect.element('@mainTitle').to.be.visible;
         this.pivotExample.expect.element('@mainTitle').text.to.be.equal("Pivot Table Demo");    
     });
