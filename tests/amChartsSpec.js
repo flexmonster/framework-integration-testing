@@ -1,4 +1,4 @@
-xdescribe('testing page With amCharts', () => {
+describe('testing page With amCharts', () => {
 
     before((client) => {
         this.currentPage = client.page.amchartsPage();
