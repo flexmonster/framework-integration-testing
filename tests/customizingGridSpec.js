@@ -40,9 +40,6 @@ describe('testing Customizing Grid page', () => {
     });
 
     it('Check Customizing the grid Toggle (disable)', (client) => {
-        client.execute(function () {
-            window.scrollTo({top: 0});
-        }, []);
         this.pivotContainer.section.toggle.expect.element('@checkbox').to.be.selected;
         this.pivotContainer.section.toggle.click('@checkboxLabel');
         this.pivotContainer.section.toggle.expect.element('@checkbox').to.not.be.selected;
@@ -96,9 +93,6 @@ describe('testing Customizing Grid page', () => {
         const calculatedFormulaName = "formula";
         this.pivotContainer.section.calculatedValuesPopup.doubleClick('@calcValBTField');
         client.setValue('input.fm-ui-element:nth-child(1)', calculatedFormulaName);
-        client.execute(function () {
-            window.scrollTo({top: 300});
-        }, []);
         this.pivotContainer.section.calculatedValuesPopup
             .waitForElementVisible("@applyCalcValPopupButton")
             .click("@applyCalcValPopupButton");
@@ -178,9 +172,6 @@ describe('testing Customizing Grid page', () => {
 
 
     it('Add condition using context menu', (client) => {
-        client.execute(function () {
-            window.scrollTo({top: 500});
-        }, []);
         this.grid.section.rowMembers.rightClick('@sumOfPriceLabel');
         this.contextMenu.click('@contextMenuRow5');
         this.pivotContainer.expect.section('@conditionalFormattingPopup').to.be.visible;
@@ -210,9 +201,6 @@ describe('testing Customizing Grid page', () => {
             .assert.hasClass('@conditionsDropdownListLessThan','fm-selected');
         this.conditionalFormattingPopup.section.conditionsDropdown
             .click('@conditionsDropdownListGreaterThan');
-        client.execute(function () {
-            window.scrollTo({top: 300});
-        }, []);
         this.conditionalFormattingPopup.expect.section('@colorPick').to.be.visible;
         this.conditionalFormattingPopup.section.colorPick.click('@colorPickButton');
         this.conditionalFormattingPopup.section.colorPick.expect.element('@colorPickPopup').to.be.visible;
@@ -231,9 +219,6 @@ describe('testing Customizing Grid page', () => {
         this.grid.doubleClick('div[data-r="3"][data-c="1"]');
         this.grid.expect.section('@drillThroughPopup').to.be.visible;
         this.grid.section.drillThroughPopup.expect.element('@drillThroughTitle').text.to.be.equal('Details');
-        client.execute(function () {
-            window.scrollTo({top: 300});
-        }, []);
         this.grid.section.drillThroughPopup.click('@drillThroughCloseButton');
     });
 

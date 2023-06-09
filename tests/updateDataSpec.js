@@ -74,9 +74,6 @@ describe('testing Update data page', () => {
         const calculatedFormulaName = "formula";
         this.pivotContainer.section.calculatedValuesPopup.doubleClick('@calcValBTField');
         client.setValue('input.fm-ui-element:nth-child(1)', calculatedFormulaName);
-        client.execute(function () {
-            window.scrollTo({ top: 300 });
-        }, []);
         this.pivotContainer.section.calculatedValuesPopup
             .waitForElementVisible("@applyCalcValPopupButton")
             .click("@applyCalcValPopupButton");
