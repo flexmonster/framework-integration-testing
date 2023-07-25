@@ -43,8 +43,10 @@ describe('testing page With Highcharts', () => {
     });
 
   it('Open the Field List', () => {
+  
         this.grid.click('@configuratorButton');
         this.pivotContainer.expect.section('@fieldList').to.be.visible;
+   
     });
 
     it('Add field to rows', () => {

@@ -38,14 +38,16 @@ describe('testing Update data page', () => {
         const cellValue = '100';//TODO try to extract value from cell using Nightwatch API
         client.expect.element('div[data-r="1"][data-c="1"]').text.to.be.equal(cellValue);
         this.pivotContainer.click('@updateDataButton');
-        this.grid.waitForElementPresent('css selector','div[data-r="1"][data-c="1"]');
+        this.grid.waitForElementPresent('css selector', 'div[data-r="1"][data-c="1"]');
         client.expect.element('div[data-r="1"][data-c="1"]').text.to.not.be.equal(cellValue);
     });
 
 
     it('Open the Field List', () => {
-        this.grid.click('@configuratorButton');
-        this.pivotContainer.expect.section('@fieldList').to.be.visible;
+      
+            this.grid.click('@configuratorButton');
+            this.pivotContainer.expect.section('@fieldList').to.be.visible;
+       
     });
 
     it('Add field to rows', () => {
@@ -72,9 +74,6 @@ describe('testing Update data page', () => {
         const calculatedFormulaName = "formula";
         this.pivotContainer.section.calculatedValuesPopup.doubleClick('@calcValBTField');
         client.setValue('input.fm-ui-element:nth-child(1)', calculatedFormulaName);
-        client.execute(function () {
-            window.scrollTo({top: 300});
-        }, []);
         this.pivotContainer.section.calculatedValuesPopup
             .waitForElementVisible("@applyCalcValPopupButton")
             .click("@applyCalcValPopupButton");

@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch --reporter html-reporter.js",
     "test-chrome": "nightwatch",
-    "test-single": "nightwatch --test tests\\highchartsSpec.js"
+    "test-vue-compositionAPI": "nightwatch --env vue --test testsCompositionAPI/compositionAPISpec.js",
+    "test-vue": "nightwatch --env vue --test tests",
+    "test-react": "nightwatch --env react --reporter html-reporter.js",
+    "test-angular": "nightwatch --env angular --reporter html-reporter.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +22,9 @@
   "homepage": "https://github.com/flexmonster/vue-integration-testing#readme",
   "dependencies": {
     "handlebars": "^4.7.7",
-    "nightwatch": "^2.6.19"
+    "nightwatch": "2.6.20"
   },
   "devDependencies": {
-    "chromedriver": "^111.0.0"
+    "chromedriver": "latest"
   }
 }

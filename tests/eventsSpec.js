@@ -54,9 +54,6 @@ describe('testing events page', () => {
     });
 
     it('Check events output', (client) => {
-        client.execute(function () {
-            window.scrollTo({top: 600});
-        })
         this.pivotContainer
             .expect.section('@eventsOutput').to.be.visible;
         this.pivotContainer.section.eventsOutput
