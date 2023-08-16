@@ -25,6 +25,5 @@
     "nightwatch": "2.6.20"
   },
   "devDependencies": {
-    "chromedriver": "latest"
   }
 }
