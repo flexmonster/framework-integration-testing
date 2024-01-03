@@ -4,8 +4,7 @@ describe('check Flexmonster Composition API Demo page', () => {
 
         this.currentPage = client.page.compositionAPIPage();
         this.currentPage.navigate();
-        //client.resizeWindow(1700, 1200);
-        client.windowMaximize();
+        client.window.maximize();
         //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();

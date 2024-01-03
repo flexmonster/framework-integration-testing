@@ -2,8 +2,7 @@ describe('testing page With amCharts', () => {
 
     before((client) => {
         this.currentPage = client.page.amchartsPage();
-        client.windowMaximize()
-        //client.resizeWindow(1700, 1200);
+        client.window.maximize()
         //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();

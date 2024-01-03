@@ -1,8 +1,7 @@
 describe('testing Update data page', () => {
 
     before((client) => {
-        //client.resizeWindow(1700, 1200);
-        client.windowMaximize();
+        client.window.maximize();
         this.currentPage = client.page.updateDataPage();
 
         //common sections

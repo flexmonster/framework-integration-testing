@@ -23,6 +23,6 @@
   "dependencies": {
     "chromedriver": "latest",
     "handlebars": "^4.7.7",
-    "nightwatch": "2.6.20"
+    "nightwatch": "^3.3.7"
   }
 }

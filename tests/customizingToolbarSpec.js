@@ -1,7 +1,6 @@
 describe('testing Customizing Toolbar page', () => {
     before((client) => {
-        client.windowMaximize();
-       // client.resizeWindow(1700, 1200);
+        client.window.maximize();
         this.currentPage = client.page.customizingToolbarPage();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();

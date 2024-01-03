@@ -1,8 +1,9 @@
 describe('testing events page', () => {
+    const gridVisibilityTimeout = 10000;
 
     before((client) => {
-        //client.resizeWindow(1700, 1200);
-        client.windowMaximize();
+        browser.timeoutsImplicitWait(gridVisibilityTimeout);
+        client.window.maximize();
         this.currentPage = client.page.eventsPage();
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.currentPage.navigate();
