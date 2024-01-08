@@ -17,6 +17,14 @@ describe('testing events page', () => {
     });
 
     it("Checks common sections", () => {
+        browser.waitUntil(async () => {
+            const result = await new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(true);
+                }, gridVisibilityTimeout / 2);
+            });
+            return result;
+        }, gridVisibilityTimeout);
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.pivotGrid.runTestSuit();
