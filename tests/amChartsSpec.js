@@ -1,8 +1,11 @@
 describe('testing page With amCharts', () => {
+    const gridVisibilityTimeout = 10000;
 
     before((client) => {
         this.currentPage = client.page.amchartsPage();
+        this.currentPage.navigate();
         client.window.maximize()
+        
         //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
@@ -13,16 +16,36 @@ describe('testing page With amCharts', () => {
         this.pivotGrid = client.page.commons.pivotGrid();
         this.pivotContainer = this.currentPage.section.pivotContainer;
 
-        this.currentPage.navigate();
-        
+
+
+        browser.waitUntil(async () => {
+            const result = await new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(true);
+                }, gridVisibilityTimeout / 2);
+            });
+            return result;
+        }, gridVisibilityTimeout);
     });
 
-    it("Checks common sections", () => {
+    it("Checks common / navbar", () => {
         this.navbar.runTestSuit();
+    });
+
+    it("Checks common / sidebar", () => {
         this.sidebar.runTestSuit();
-        this.pivotGrid.runTestSuit();
+    });
+
+    it("Checks common / toolbar", () => {
         this.toolbar.runTestSuit();
+    });
+
+    it("Checks common / fieldList", () => {
         this.fieldList.runTestSuit();
+    });
+
+    it("Checks common / pivotGrid", () => {
+        this.pivotGrid.runTestSuit();
     });
 
     it("Check 'Integration with amCharts' link to docs", (client) => {
