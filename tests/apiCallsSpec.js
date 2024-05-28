@@ -49,6 +49,7 @@ describe('testing using API calls page', () => {
             .element('@viewCheckboxLabel').text.to.be.equal("Column chart")
         this.pivotContainer.section.viewToggle
             .assert.cssProperty("@viewCheckboxLabel", "background-color", "rgba(223, 56, 0, 1)");
+        browser.waitForElementVisible('.fm-charts-view', 10000);
         this.pivotContainer.expect.section('@grid').to.not.be.visible;
         this.pivotContainer.expect.section('@charts').to.be.visible;
     });
