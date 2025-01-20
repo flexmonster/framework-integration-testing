@@ -180,7 +180,7 @@ describe('testing page With Highcharts', () => {
         this.grid.expect.section('@contextMenu').to.be.visible;
         this.contextMenu.click('@contextMenuRow4');
         this.pivotContainer.expect.section('@conditionalFormattingPopup').to.be.visible;
-        this.pivotContainer.section.conditionalFormattingPopup.click('@deleteFirstConditionButton');
+        this.pivotContainer.section.conditionalFormattingPopup.click('@deleteSecondConditionButton');
         this.pivotContainer.section.conditionalFormattingPopup.click('@conditionalFormattingApplyButton');
         this.pivotContainer.expect.section('@conditionalFormattingPopup').to.not.be.present;
         client.waitForElementPresent('div[data-r="3"][data-c="1"]');
