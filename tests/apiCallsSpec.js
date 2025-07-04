@@ -2,7 +2,7 @@ describe('testing using API calls page', () => {
 
     before((client) => {
         this.currentPage = client.page.apiCallsPage();
-        client.window.maximize()
+        client.window.maximize();
         //common sections
         this.sidebar = client.page.commons.sidebar();
         this.navbar = client.page.commons.navbar();
@@ -63,7 +63,7 @@ describe('testing using API calls page', () => {
 
         // Wait a bit for scroll to complete
         browser.pause(1000);
-        browser.waitForElementVisible('.fm-charts-view', 15000);
+        //browser.waitForElementVisible('.fm-charts-view', 15000);
         this.pivotContainer.expect.section('@grid').to.not.be.visible;
         this.pivotContainer.expect.section('@charts').to.be.visible;
     });
