@@ -51,21 +51,23 @@ describe('testing using API calls page', () => {
         this.pivotContainer.section.viewToggle
             .assert.cssProperty("@viewCheckboxLabel", "background-color", "rgba(223, 56, 0, 1)");
 
+        const selector = '#fm-pivot-view > div.fm-charts-view';
         // Ensure element is in viewport by scrolling to it
         browser.execute(function () {
-            const element = document.querySelector('.fm-charts-view');
+            const element = document.querySelector('div.fm-charts-view');
             if (element) {
                 element.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center'
+                    block: 'start',
                 });
             }
         });
 
         // Wait a bit for scroll to complete
-        browser.pause(1000);
-        browser.waitForElementPresent('css selector', 'div.fm-charts-view', 15000);
-        browser.waitForElementVisible('css selector', 'div.fm-charts-view', 15000);
+        //browser.pause(5000);
+
+        browser.waitForElementPresent(selector, 20000);
+        browser.waitForElementVisible(selector, 20000);
         this.pivotContainer.expect.section('@grid').to.not.be.visible;
         this.pivotContainer.expect.section('@charts').to.be.visible;
     });
