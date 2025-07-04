@@ -67,7 +67,7 @@ describe('testing using API calls page', () => {
     });
 
 
-    /*it('Check Using API calls view toggle(grid)', () => {
+    it('Check Using API calls view toggle(grid)', () => {
         this.pivotContainer.section.viewToggle.expect
             .element('@viewCheckbox').to.not.be.selected;
         this.pivotContainer.section.viewToggle.click('@viewCheckboxLabel');
@@ -198,7 +198,7 @@ describe('testing using API calls page', () => {
         this.drillThroughPopup.expect.element('@drillThroughRowMember').text.to.contain("Australia");
         this.drillThroughPopup.click('@drillThroughCloseButton');
         this.pivotContainer.expect.section('@drillThroughPopup').to.not.be.visible;
-    });*/
+    });
 
     it("Return to initial page state", (client) => {
         client.refresh();
