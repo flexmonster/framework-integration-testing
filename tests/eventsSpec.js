@@ -63,6 +63,19 @@ describe('testing events page', () => {
     });
 
     it('Check events output', (client) => {
+        // Ensure element is in viewport by scrolling to it
+        browser.execute(function () {
+            const element = document.querySelector('div.event-logs-wrapper');
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        });
+
+        // Wait a bit for scroll to complete
+        browser.pause(1000);
         this.pivotContainer
             .expect.section('@eventsOutput').to.be.visible;
         this.pivotContainer.section.eventsOutput

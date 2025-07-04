@@ -49,7 +49,21 @@ describe('testing using API calls page', () => {
             .element('@viewCheckboxLabel').text.to.be.equal("Column chart")
         this.pivotContainer.section.viewToggle
             .assert.cssProperty("@viewCheckboxLabel", "background-color", "rgba(223, 56, 0, 1)");
-        browser.waitForElementVisible('.fm-charts-view', 10000);
+
+        // Ensure element is in viewport by scrolling to it
+        browser.execute(function () {
+            const element = document.querySelector('.fm-charts-view');
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        });
+
+        // Wait a bit for scroll to complete
+        browser.pause(1000);
+        browser.waitForElementVisible('.fm-charts-view', 15000);
         this.pivotContainer.expect.section('@grid').to.not.be.visible;
         this.pivotContainer.expect.section('@charts').to.be.visible;
     });

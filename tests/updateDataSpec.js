@@ -35,6 +35,7 @@ describe('testing Update data page', () => {
     it('Check update data button', (client) => {
         this.pivotContainer.expect.element('@updateDataButton').to.be.visible;
         const cellValue = '100';//TODO try to extract value from cell using Nightwatch API
+        browser.pause(1000); // wait for grid to load
         client.expect.element('div[data-r="1"][data-c="1"]').text.to.be.equal(cellValue);
         this.pivotContainer.click('@updateDataButton');
         this.grid.waitForElementPresent('css selector', 'div[data-r="1"][data-c="1"]');

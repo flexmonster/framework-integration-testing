@@ -51,7 +51,7 @@ describe('testing Customizing Grid page', () => {
     it('Check Customizing the grid Toggle (enabled)', (client) => {
         this.pivotContainer.section.toggle.expect.element('@checkbox').to.not.be.selected;
         this.pivotContainer.section.toggle.click('@checkboxLabel');
-
+        browser.pause(1000);
         this.pivotContainer.section.toggle.expect.element('@checkbox').to.be.selected;
         this.pivotContainer.section.toggle.expect.element('@checkboxLabel')
             .text.to.be.equal("The grid cells are customized");
@@ -211,7 +211,6 @@ describe('testing Customizing Grid page', () => {
         this.conditionalFormattingPopup.click('@conditionalFormattingApplyButton');
         this.pivotContainer.expect.section('@conditionalFormattingPopup').to.not.be.present;
         client.assert.cssProperty('div[data-r="4"][data-c="1"]', "background-color", "rgba(255, 152, 0, 1)");
-
     })
 
     it('Check drill-through', (client) => {
