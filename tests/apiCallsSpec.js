@@ -22,6 +22,7 @@ describe('testing using API calls page', () => {
     });
 
     it("Checks common sections", () => {
+        this.currentPage.navigate();
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.pivotGrid.runTestSuit();
@@ -63,7 +64,8 @@ describe('testing using API calls page', () => {
 
         // Wait a bit for scroll to complete
         browser.pause(1000);
-        //browser.waitForElementVisible('.fm-charts-view', 15000);
+        browser.waitForElementPresent('.fm-charts-view', 15000);
+        browser.waitForElementVisible('.fm-charts-view', 15000);
         this.pivotContainer.expect.section('@grid').to.not.be.visible;
         this.pivotContainer.expect.section('@charts').to.be.visible;
     });

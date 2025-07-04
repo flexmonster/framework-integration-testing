@@ -18,6 +18,7 @@ describe('check Flexmonster Demo page', () => {
     });
 
     it("Checks common sections", () => {
+        this.currentPage.navigate();
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.pivotGrid.runTestSuit();

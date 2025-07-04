@@ -13,6 +13,7 @@ describe('testing Customizing Toolbar page', () => {
     });
 
     it("Checks common sections", () => {
+        this.currentPage.navigate();
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         //different Toolbar

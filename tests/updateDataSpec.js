@@ -19,6 +19,7 @@ describe('testing Update data page', () => {
     });
 
     it("Checks common sections", () => {
+        this.currentPage.navigate();
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();

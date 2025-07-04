@@ -18,6 +18,7 @@ describe('check Flexmonster Composition API Demo page', () => {
     });
 
     it("Checks common sections", (client) => {
+        this.currentPage.navigate();
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.pivotGrid.runTestSuit();

@@ -17,6 +17,7 @@ describe('testing events page', () => {
     });
 
     it("Checks common sections", () => {
+        this.currentPage.navigate();
         browser.waitUntil(async () => {
             const result = await new Promise((resolve) => {
                 setTimeout(() => {

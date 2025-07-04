@@ -13,8 +13,8 @@ describe('testing Customizing Grid page', () => {
         //selectors
         this.pivotContainer = this.currentPage.section.pivotContainer;
         this.grid = this.pivotContainer.section.pivotGrid;
-        this.filterPopup=this.grid.section.filterPopup;
-        this.contextMenu=this.grid.section.contextMenu;
+        this.filterPopup = this.grid.section.filterPopup;
+        this.contextMenu = this.grid.section.contextMenu;
         this.fieldList = this.pivotContainer.section.fieldList;
         this.fieldListContent = this.fieldList.section.fieldListContent;
         this.numberFormattingPopup = this.pivotContainer.section.numberFormattingPopup;
@@ -22,6 +22,7 @@ describe('testing Customizing Grid page', () => {
     });
 
     it("Checks common sections", () => {
+        this.currentPage.navigate();
         this.navbar.runTestSuit();
         this.sidebar.runTestSuit();
         this.toolbar.runTestSuit();
@@ -61,10 +62,10 @@ describe('testing Customizing Grid page', () => {
     });
 
     it('Open the Field List', () => {
-      
-            this.grid.click('@configuratorButton');
-            this.pivotContainer.expect.section('@fieldList').to.be.visible;
-       
+
+        this.grid.click('@configuratorButton');
+        this.pivotContainer.expect.section('@fieldList').to.be.visible;
+
     });
 
     it('Add field to rows', () => {
@@ -185,7 +186,7 @@ describe('testing Customizing Grid page', () => {
         this.conditionalFormattingPopup.section.measuresDropdown
             .expect.element('@measuresDropdownList').to.be.visible;
         this.conditionalFormattingPopup.section.measuresDropdown
-            .assert.hasClass('@measuresDropdownListAll','fm-selected');
+            .assert.hasClass('@measuresDropdownListAll', 'fm-selected');
         this.conditionalFormattingPopup.section.measuresDropdown
             .click('@measuresDropdownListDiscount');
         this.conditionalFormattingPopup.section.measuresDropdown
@@ -197,7 +198,7 @@ describe('testing Customizing Grid page', () => {
         this.conditionalFormattingPopup.section.conditionsDropdown
             .expect.element('@conditionsDropdownList').to.be.visible;
         this.conditionalFormattingPopup.section.conditionsDropdown
-            .assert.hasClass('@conditionsDropdownListLessThan','fm-selected');
+            .assert.hasClass('@conditionsDropdownListLessThan', 'fm-selected');
         this.conditionalFormattingPopup.section.conditionsDropdown
             .click('@conditionsDropdownListGreaterThan');
         this.conditionalFormattingPopup.expect.section('@colorPick').to.be.visible;
