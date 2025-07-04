@@ -54,13 +54,7 @@ describe('testing using API calls page', () => {
         const selector = '#fm-pivot-view > div.fm-charts-view';
         // Ensure element is in viewport by scrolling to it
         browser.execute(function () {
-            const element = document.querySelector('div.fm-charts-view');
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                });
-            }
+            window.scrollTo(0, document.body.scrollHeight);
         });
 
         // Wait a bit for scroll to complete
