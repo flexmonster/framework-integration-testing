@@ -1,8 +1,6 @@
 module.exports = {
     src_folders: ['tests'],
     page_objects_path: ['lib/pages'],
-    //custom_commands_path: ['nightwatch/custom-commands'],
-    //custom_assertions_path: ['nightwatch/custom-assertions'],
     plugins: [],
     globals_path: '',
     webdriver: {},
@@ -15,14 +13,22 @@ module.exports = {
                 on_failure: true
             },
             desiredCapabilities: {
-                browserName: 'chrome'
+                browserName: 'chrome',
+                chromeOptions: {
+                    "args": [
+                        "window-size=1280,800"
+                    ]
+                }
             },
             webdriver: {
                 start_process: true,
-                server_path: ''
+                server_path: require('chromedriver').path
             },
-            globals:{
-                retryAssertionTimeout: 10000
+            globals: {
+                retryAssertionTimeout: 15000,
+                waitForConditionTimeout: 15000,
+                abortOnAssertionFailure: false,
+                abortOnElementLocateError: false,
             }
         },
         vue: {
@@ -38,7 +44,6 @@ module.exports = {
             desiredCapabilities: {
                 browserName: 'chrome',
                 'goog:chromeOptions': {
-                    // w3c:false tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
                     w3c: true,
                     args: [
                         "disable-gpu",
@@ -47,13 +52,12 @@ module.exports = {
                         "no-sandbox",
                         "ignore-certificate-errors",
                         "allow-insecure-localhost"
-                        //'--headless'
                     ]
                 }
             },
             webdriver: {
                 start_process: true,
-                server_path: '',
+                server_path: require('chromedriver').path,
                 cli_args: [
                     "disable-gpu",
                     "headless",
