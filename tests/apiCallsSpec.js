@@ -52,18 +52,18 @@ describe('testing using API calls page', () => {
             .assert.cssProperty("@viewCheckboxLabel", "background-color", "rgba(223, 56, 0, 1)");
 
         const selector = '#fm-pivot-view > div.fm-charts-view';
-        // Ensure element is in viewport by scrolling to it
-        browser.execute(function () {
-            window.scrollTo(0, document.body.scrollHeight);
-        });
 
-        // Wait a bit for scroll to complete
-        //browser.pause(5000);
+        //wait chart draw
+        browser.executeAsyncScript(function(done) {
+            setTimeout(function() {
+                done(true);
+            }, 2000);
+        });        
 
-        // browser.waitForElementPresent(selector, 20000);
-        // browser.waitForElementVisible(selector, 20000);
-        // this.pivotContainer.expect.section('@grid').to.not.be.visible;
-        // this.pivotContainer.expect.section('@charts').to.be.visible;
+        browser.waitForElementPresent(selector, 20000);
+        browser.waitForElementVisible(selector, 20000);
+        this.pivotContainer.expect.section('@grid').to.not.be.visible;
+        this.pivotContainer.expect.section('@charts').to.be.visible;
     });
 
 
@@ -87,6 +87,14 @@ describe('testing using API calls page', () => {
             .element('@modeCheckbox').to.not.be.selected;
         this.pivotContainer.section.modeToggle.expect
             .element('@modeCheckboxLabel').text.to.be.equal("Read-only");
+
+        //wait pivot redraw
+        browser.executeAsyncScript(function(done) {
+            setTimeout(function() {
+                done(true);
+            }, 2000);
+        }); 
+
         this.pivotContainer.section.modeToggle
             .assert.cssProperty("@modeCheckboxLabel", "background-color", "rgba(223, 56, 0, 1)");
         this.pivotContainer.expect.section('@configuratorButton').to.not.be.visible;
@@ -99,6 +107,14 @@ describe('testing using API calls page', () => {
             .element('@modeCheckbox').to.be.selected;
         this.pivotContainer.section.modeToggle.expect
             .element('@modeCheckboxLabel').text.to.be.equal("Interactive");
+
+        //wait pivot redraw
+        browser.executeAsyncScript(function(done) {
+            setTimeout(function() {
+                done(true);
+            }, 2000);
+        }); 
+
         this.pivotContainer.section.modeToggle.
         assert.cssProperty('@modeCheckboxLabel', "background-color", "rgba(0, 164, 90, 1)");
         this.pivotContainer.expect.section('@configuratorButton').to.be.visible;
