@@ -57,7 +57,7 @@ describe('testing using API calls page', () => {
         browser.executeAsyncScript(function(done) {
             setTimeout(function() {
                 done(true);
-            }, 2000);
+            }, 10000);
         });        
 
         browser.waitForElementPresent(selector, 20000);
