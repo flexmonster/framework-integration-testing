@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test-chrome": "nightwatch",
-    "test-vue-compositionAPI": "nightwatch --env vue --test testsCompositionAPI/compositionAPISpec.js --reporter html-reporter.js",
+    "test-vue-optionsAPI": "nightwatch --env vue --test testsOptionsAPI/optionsAPISpec.js --reporter html-reporter.js",
     "test-vue": "nightwatch --env vue --test tests --reporter html-reporter.js",
     "test-react": "nightwatch --env react --reporter html-reporter.js",
     "test-angular": "nightwatch --env angular --reporter html-reporter.js"
