@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/flexmonster/vue-integration-testing#readme",
   "dependencies": {
-    "chromedriver": "latest",
+    "chromedriver": "144.0.1",
     "handlebars": "^4.7.7",
     "nightwatch": "^3.9.0"
   }
