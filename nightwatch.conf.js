@@ -15,7 +15,10 @@ module.exports = {
       desiredCapabilities: {
         browserName: "chrome",
         chromeOptions: {
-          args: ["window-size=1280,800"],
+          args: [
+            "window-size=1280,800",
+            "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Flexmonster",
+          ],
         },
       },
       webdriver: {
@@ -43,7 +46,8 @@ module.exports = {
         browserName: "chrome",
         "goog:chromeOptions": {
           w3c: true,
-          args: ["disable-gpu", "headless", "window-size=1920,1080", "no-sandbox", "ignore-certificate-errors", "allow-insecure-localhost"],
+          args: ["disable-gpu", "headless", "window-size=1920,1080", "no-sandbox", "ignore-certificate-errors", "allow-insecure-localhost",
+            "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Flexmonster"],
         },
       },
       webdriver: {
